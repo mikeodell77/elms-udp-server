@@ -1,4 +1,4 @@
-var PORT = 33333;
+var PORT = process.env.PORT || 33333;
 var HOST = process.env.IP || 'http://localhost'
 
 var dgram = require('dgram');
