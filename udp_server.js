@@ -1,5 +1,5 @@
 var PORT = process.env.PORT || 33333;
-var HOST = process.env.IP || 'http://localhost'
+var HOST = process.env.IP || '127.0.0.1'
 
 var dgram = require('dgram');
 var server = dgram.createSocket('udp4');
@@ -15,4 +15,4 @@ server.on('message', function(message, remote) {
   server.send(message, 0, message.length, remote.port, remote.address);
 });
 
-server.bind(PORT, HOST);
+server.bind(PORT);
